@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: rgb(30, 30, 30);
+  --ash: rgb(61, 61, 61);
+  --orange: rgb(235, 138, 2);
+  --green: rgba(1, 174, 39, 0.863);
+  --red: rgba(228, 0, 0, 0.806);
+  --pink: rgb(238, 122, 212);
+  --blue: rgb(73, 161, 207);
+}
+
+body {
+  background-color: var(--black);
+  overflow-X: hidden;
+  background-image: url(RockPaperScissor-background1.jpg);
+}
+
+header {
+  margin: 20px;
+  display: block;
+}
+
+.container {
+  border: 5px solid var(--orange);
+  height: 100vh;
+  width: 70vw;
+  margin: 0 15vw 0 15vw;
+  background-color: var(--black);
+}
+
+h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+h1 img {
+  width: 100px;
+  height: 150px;
+}
+
+.bodeh {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.body1, .body2 {
+  width: 50%;
+}
+
+.body1 a, .body2 a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#rightImg {
+  width: 170px;
+  height: 170px;
+}
+
+#leftImg {
+  width: 350px;
+  height: 200px;
+}
+
+#leftImg {
+  border-radius: 50px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#leftImg:hover {
+  scale: 1;
+  background-color: var(--pink);
+}
+
+.body1 p, .body2 p {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.body1 p {
+  color: var(--pink);
+}
+
+.body2 p {
+  color: var(--blue);
+}
+
+#rightImg {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  border-radius: 50px;
+}
+
+#rightImg:hover {
+  scale: 1;
+  background-color: #79f6ff;
+}
+/*# sourceMappingURL=RPSH.css.map */

@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --black : rgb(30, 30, 30);
+    --ash : rgb(61, 61, 61);
+    --orange: rgb(235, 138, 2);
+    --green : rgba(1, 174, 39, 0.863);
+    --red : rgba(228, 0, 0, 0.806);
+    --pink: rgb(238, 122, 212);
+    --blue: rgb(73, 161, 207);
+}
+
+body{
+    background-color: var(--black);
+    overflow-X: hidden;
+    background-image: url(RockPaperScissor-background1.jpg);
+}
+
+header{
+    margin: 20px;
+    display: block;
+}
+
+.container{
+    border: 5px solid var(--orange);
+    height: 100vh;
+    width: 70vw;
+    margin: 0 15vw 0 15vw;
+    background-color: var(--black);
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+h1 img{
+    width: 100px;
+    height: 150px;
+}
+
+
+.bodeh{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10%;
+}
+
+.body1, .body2{
+    // padding:0% 15% 0% 15%;
+    width: 50%;
+}
+
+.body1 a, .body2 a{
+    display: flex;
+    justify-content: center;
+}
+
+#rightImg{
+    width: 170px;
+    height: 170px;
+}
+
+#leftImg{
+    width: 350px;
+    height: 200px;
+}
+
+#leftImg{
+    // background-color: var(--pink);
+    border-radius: 50px;
+    // border: 5px solid rgba(240, 113, 212, 0.856);
+    transition: all 0.5s ease;
+}
+
+#leftImg:hover{
+    scale: (1);
+    background-color: var(--pink);
+}
+
+.body1 p, .body2 p{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.body1 p{
+    color: var(--pink);
+}
+
+.body2 p{
+    color: var(--blue);
+}
+
+#rightImg{
+    transition: all 0.5s ease;
+    border-radius: 50px;
+}
+
+#rightImg:hover{
+    scale: (1);
+    background-color: rgb(121, 246, 255);
+}

@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --black : rgb(30, 30, 30);
+    --ash : rgb(61, 61, 61);
+    --orange: rgb(235, 138, 2);
+    --green : rgba(1, 174, 39, 0.863);
+    --red : rgba(228, 0, 0, 0.806);
+    --pink: rgb(238, 122, 212);
+    --blue: rgb(73, 161, 207);
+}
+
+body{
+    background-color: var(--black);
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+h1 img{
+    width: 100px;
+    height: 150px;
+}
+
+.container{
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    font-size: 50px;
+    padding: 10px;
+    color: rgb(242, 177, 47);
+}
+
+.leftSide h2{
+    color: var(--pink);
+}
+
+.rightSide h2{
+    color: var(--blue);
+}
+
+.leftSide , .rightSide{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin: 3%;
+
+    border-radius: 7px;
+    align-items: center;
+}
+
+.leftSide{
+    border: 2px solid var(--pink); 
+}
+
+.rightSide{
+    border: 2px solid var(--blue);
+}
+
+.leftSelect, .rightSelect{
+    border: 8px solid var(--ash);
+    border-radius: 50%;
+    align-content: center;
+    width: 300px;
+    height: 300px;
+}
+
+.click{
+    border-color: var(--orange);
+    background-color: var(--black);
+}
+
+.win{
+    border-color: var(--green);
+    background-color: var(--green);
+}
+
+.loose{
+    border-color: var(--red);
+    background-color: var(--red);
+}
+
+.draw{
+    border-color:var(--ash);
+    background-color: var(--ash);
+}
+
+#leftImg, #rightImg{
+    display: none;
+    width: 200px;
+    height: 200px;
+    align-self: center;
+    padding: 50px;
+}
+
+.rightOptions, .leftOptions{
+    display: flex;
+    margin-top: 70px;
+}
+
+.leftChoice, .rightChoice{
+    width: 100px;
+    height: 100px;
+    margin: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.leftChoice{
+    border: 2px solid var(--pink);
+}
+
+.rightChoice{
+    border: 2px solid var(--blue);
+}
+
+.leftChoice.expand{
+    background-color: var(--pink);
+    transform: scale(1.1);
+}
+
+.rightChoice.expand{
+    background-color: var(--blue);
+    transform: scale(1.1);
+}
+
+#middle{
+    display: flex;
+    flex-direction: column;
+}
+
+.count{
+    text-align: center;
+    color: white;
+    margin: 30%;
+    font-size: 30px;
+}
+
+@keyframes blinkBorder{
+    0%, 100% {border-color: var(--orange);}
+    50% {border-color: transparent;}
+}
+
+.blink{
+    animation: blinkBorder 0.5s ease-in-out 3;
+}
+
+.playButton{
+    align-content: center;
+}
+
+#play{
+    border: 2px solid var(--orange);
+    border-radius: 50px;
+    align-self: center;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#play:hover{
+    background-color: var(--orange);
+    transform: scale(1.2);
+}
+
+#refreshButton{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+#refreshButton img{
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--orange);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+#refreshButton img:hover{
+    background-color: var(--orange);
+    transform: scale(1.1);
+}
