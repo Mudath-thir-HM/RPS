@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Results</h1>
+        <div id="result"></div>
+        <button onclick="window.location.href='quiz.html'" class="btn">Back to Quiz</button>
+    </div>
+    
+</body>
+
+<script>
+        // Retrieve score and username from localStorage
+    const userData = JSON.parse(localStorage.getItem('quizUserData'))
+    const resultElement = document.getElementById('result')
+
+    // Display the user's name and score
+    if (userData) {
+    resultElement.innerText = `${userData.name}, your score is ${userData.score}`
+    } else {
+    resultElement.innerText = "No quiz results found."
+    }
+
+</script>
+</html>

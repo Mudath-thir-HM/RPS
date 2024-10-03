@@ -122,4 +122,38 @@ h1 img {
   scale: 1;
   background-color: #79f6ff;
 }
+
+#quizContainer {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10%;
+}
+
+#Quiz {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  font-size: 30px;
+  color: var(--orange);
+  border: 3px solid var(--orange);
+  border-radius: 10px;
+  background-color: var(--black);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#Quiz:hover {
+  scale: 1.2;
+  background-color: var(--orange);
+  color: var(--black);
+}
 /*# sourceMappingURL=RPSH.css.map */
