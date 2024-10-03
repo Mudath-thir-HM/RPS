@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/winner.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 id="winnerMessage"></h1>
+        <img class="hide" id="hand1" src="images/fist-up-pink.png" alt="">
+        <img class="hidden" id="hand2" src="images/fist-up-blue-removebg-preview (1).png" alt="">
+        <button id="playAgain">Play Again</button>
+
+    </div>
+
+    <script>
+                // Get the winner from localStorage
+                const winner = localStorage.getItem('winner');
+        
+                const winnerMessage = document.getElementById('winnerMessage');
+                // Display the winner
+                if (winner === 'User 1'){
+                    winnerMessage.textContent = `${winner} has won the game!`;
+                    document.querySelector('#hand1').classList.remove('hide');
+                }else{
+                    winnerMessage.style.color="rgb(73, 161, 207)";
+                    winnerMessage.textContent = `${winner} has won the game!`;
+                    document.querySelector('#hand2').classList.remove('hidden');
+                }
+                
+                
+        
+                // Event listener for Play Again button
+                document.getElementById('playAgain').addEventListener('click', function() {
+                    // Clear the winner and redirect back to the game
+                    localStorage.removeItem('winner');
+                    window.location.href = '../RPS.html';
+                });
+    </script>
+</body>
+</html>

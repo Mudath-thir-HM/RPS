@@ -5,6 +5,8 @@ const rightImage = document.getElementById("rightImg");
 const refresh = document.getElementById("refreshButton");
 const left = document.querySelector(".leftSelect");
 const right = document.querySelector(".rightSelect")
+const counter1 = document.getElementById("count1");
+const counter2 = document.getElementById("count2");
 let counter = 0;
 let counterr = 0;
 
@@ -61,11 +63,6 @@ document.getElementById("playButton").addEventListener("click", function(){
         document.getElementById("rightImg").style.display="block";
         let a = document.querySelectorAll(".leftChoice");
         let b = document.querySelectorAll(".rightChoice");
-        let counter1 = document.getElementById("count1");
-        let counter2 = document.getElementById("count2");
-
-        a[0] = 1; a[1] = 2; a[2] = 3;
-        b[0] = 1; b[1] = 2; b[2] = 3;
 
         if(leftImage.src === a[0].src && rightImage.src === b[2].src){
             left.classList.add('draw');
@@ -115,5 +112,21 @@ document.getElementById("playButton").addEventListener("click", function(){
             counterr++;
             counter2.textContent = counterr;
         }
+
+        checkWinner();
+        
     },1500);
 })
+
+function checkWinner(){
+    if(counter === 3){
+        declareWinner('User 1');
+    }else if(counterr === 3){
+        declareWinner('User 2');
+    }
+}
+
+function declareWinner(winner){
+    localStorage.setItem('winner', winner);
+    window.location.href = 'RPS/winner.html'
+}

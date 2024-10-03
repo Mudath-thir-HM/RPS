@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Jersey 25", sans-serif;
 }
 
 :root {
@@ -17,6 +18,10 @@ body {
   background-color: var(--black);
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,8 +32,8 @@ h1 {
 }
 
 h1 img {
-  width: 100px;
-  height: 150px;
+  width: 60px;
+  height: 90px;
 }
 
 .container {
@@ -83,12 +88,19 @@ h2 {
 }
 
 .leftSelect, .rightSelect {
-  border: 8px solid var(--ash);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 6px solid var(--ash);
+  margin: 2%;
   border-radius: 50%;
   -ms-flex-line-pack: center;
       align-content: center;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 
 .click {
@@ -113,8 +125,8 @@ h2 {
 
 #leftImg, #rightImg {
   display: none;
-  width: 200px;
-  height: 200px;
+  width: 125px;
+  height: 125px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -129,8 +141,8 @@ h2 {
 }
 
 .leftChoice {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   margin: 3px;
   border-radius: 5px;
   cursor: pointer;
@@ -147,10 +159,9 @@ h2 {
 }
 
 .bot img {
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   margin: 3px;
-  cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border-radius: 50px;
@@ -237,12 +248,12 @@ h2 {
 
 #play {
   border: 2px solid var(--orange);
-  border-radius: 50px;
+  border-radius: 25px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  width: 200px;
-  height: 200px;
+  width: 140px;
+  height: 140px;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -266,8 +277,8 @@ h2 {
 }
 
 #refreshButton img {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   border: 2px solid var(--orange);
   border-radius: 50px;
   -webkit-transition: all 0.3s ease;

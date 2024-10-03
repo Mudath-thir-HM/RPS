@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Jersey 25", sans-serif;
 }
 
 :root{
@@ -23,9 +24,13 @@ h1{
     justify-content: center;
 }
 
+a{
+    text-decoration: none;
+}
+
 h1 img{
-    width: 100px;
-    height: 150px;
+    width:60px;
+    height: 90px;
 }
 
 .container{
@@ -54,7 +59,6 @@ h2{
     flex-direction: column;
     padding: 2%;
     margin: 3%;
-
     border-radius: 7px;
     align-items: center;
 }
@@ -68,11 +72,13 @@ h2{
 }
 
 .leftSelect, .rightSelect{
-    border: 8px solid var(--ash);
+    display: flex;
+    justify-content: center;
+    border: 6px solid var(--ash);
     border-radius: 50%;
     align-content: center;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
 }
 
 .click{
@@ -97,8 +103,8 @@ h2{
 
 #leftImg, #rightImg{
     display: none;
-    width: 200px;
-    height: 200px;
+    width: 125px;
+    height: 125px;
     align-self: center;
     padding: 50px;
 }
@@ -109,8 +115,8 @@ h2{
 }
 
 .leftChoice, .rightChoice{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     margin: 3px;
     border-radius: 5px;
     cursor: pointer;
@@ -162,10 +168,10 @@ h2{
 
 #play{
     border: 2px solid var(--orange);
-    border-radius: 50px;
+    border-radius: 25px;
     align-self: center;
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -183,8 +189,8 @@ h2{
 }
 
 #refreshButton img{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border: 2px solid var(--orange);
     border-radius: 50px;
     transition: all 0.3s ease;

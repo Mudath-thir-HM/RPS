@@ -6,13 +6,17 @@ const refresh = document.getElementById("refreshButton");
 const left = document.querySelector(".leftSelect");
 const right = document.querySelector(".rightSelect")
 const bot = document.getElementById('bot');
+const counter1 = document.getElementById("count1");
+const counter2 = document.getElementById("count2");
 let counter = 0;
 let counterr = 0;
 
+// refreshes the page when the refresh button is clicked
 refresh.addEventListener("click", () => {
     location.reload();
 })
 
+// expands the emojis when the cursor hovers above them
 leftemoji.forEach(function(element){
     element.addEventListener("mouseover", () => {
         element.classList.add('expand')
@@ -22,36 +26,33 @@ leftemoji.forEach(function(element){
     })
 });
 
-rightemoji.forEach(function(element){
-    element.addEventListener("mouseover", () => {
-        element.classList.add('expand');
-    });
-    element.addEventListener("mouseout", () => {
-        element.classList.remove('expand');
-    });
-});
-
+// functionality when an option is chosen
 for (const leftSelect of leftemoji) {
     leftSelect.addEventListener("click", () => {
+        // logs the image to the big image when an option is chosen
         leftImage.src = leftSelect.src;
         leftImage.style.display="none";
         left.classList.add('click');
         left.classList.remove('draw','win','loose'); 
-
+        
         bot.classList.add('logged');
-
-        setTimeout(() => {
-            bot.classList.remove('logged');
-            let rightSelect = rightemoji;
-            let randomize = Math.floor(Math.random() * rightSelect.length);
-            let innerRandom = rightSelect[randomize].src;
-            rightImage.src = innerRandom;
-            rightImage.style.display="none";
-            right.classList.add('click');
-            right.classList.remove('draw','win','loose');
-        },1500)
+        randomBot()
     }); 
 };
+
+function randomBot(){
+    setTimeout(() => {
+        bot.classList.remove('logged');
+        
+        let rightSelect = rightemoji;
+        let randomize = Math.floor(Math.random() * rightSelect.length);
+        let innerRandom = rightSelect[randomize].src;
+        rightImage.src = innerRandom;
+        rightImage.style.display="none";
+        right.classList.add('click');
+        right.classList.remove('draw','win','loose');
+    },1500)
+}
 
 document.getElementById("playButton").addEventListener("click", function(){
 
@@ -66,11 +67,6 @@ document.getElementById("playButton").addEventListener("click", function(){
         document.getElementById("rightImg").style.display="block";
         let a = document.querySelectorAll(".leftChoice");
         let b = document.querySelectorAll(".rightChoice");
-        let counter1 = document.getElementById("count1");
-        let counter2 = document.getElementById("count2");
-    
-        a[0] = 1; a[1] = 2; a[2] = 3;
-        b[0] = 1; b[1] = 2; b[2] = 3;
     
         if(leftImage.src === a[0].src && rightImage.src === b[2].src){
             left.classList.add('draw');
@@ -120,7 +116,20 @@ document.getElementById("playButton").addEventListener("click", function(){
             counterr++;
             counter2.textContent = counterr;
         }
+        checkWinner();
 
     }, 1500);
+});
 
-})
+function checkWinner(){
+    if(counter === 3){
+        declareWinner('User 1');
+    }else if(counterr === 3){
+        declareWinner('Computer');
+    }
+}
+
+function declareWinner(winner){
+    localStorage.setItem('winner', winner);
+    window.location.href = 'RPS(C)/winner.html'
+}
