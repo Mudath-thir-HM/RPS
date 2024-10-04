@@ -33,8 +33,7 @@ for (const leftSelect of leftemoji) {
         leftImage.src = leftSelect.src;
         leftImage.style.display="none";
         left.classList.add('click');
-        left.classList.remove('draw','win','loose'); 
-        
+        left.classList.remove('draw','win','loose');        
         bot.classList.add('logged');
         randomBot()
     }); 
@@ -51,6 +50,7 @@ function randomBot(){
         rightImage.style.display="none";
         right.classList.add('click');
         right.classList.remove('draw','win','loose');
+
     },1500)
 }
 
@@ -63,63 +63,68 @@ document.getElementById("playButton").addEventListener("click", function(){
         left.classList.remove('blink');
         right.classList.remove('blink');
 
-        document.getElementById("leftImg").style.display="block";
-        document.getElementById("rightImg").style.display="block";
-        let a = document.querySelectorAll(".leftChoice");
-        let b = document.querySelectorAll(".rightChoice");
-    
-        if(leftImage.src === a[0].src && rightImage.src === b[2].src){
-            left.classList.add('draw');
-            right.classList.add('draw');
-    
-        }else if(leftImage.src === a[1].src && rightImage.src === b[1].src){
-            left.classList.add('draw')
-            right.classList.add('draw')
-    
-        }else if(leftImage.src === a[2].src && rightImage.src === b[0].src){
-            left.classList.add('draw');
-            right.classList.add('draw')
-    
-        }else if(leftImage.src === a[0].src && rightImage.src === b[0].src){
-            left.classList.add('win')
-            right.classList.add('loose')
-            counter++;
-            counter1.textContent = counter;
-            
-        }else if(leftImage.src === a[0].src && rightImage.src === b[1].src){
-            left.classList.add('loose')
-            right.classList.add('win')
-            counterr++;
-            counter2.textContent = counterr;
-    
-        }else if(leftImage.src === a[1].src && rightImage.src === b[0].src){
-            left.classList.add('loose')
-            right.classList.add('win')
-            counterr++;
-            counter2.textContent = counterr;
-    
-        }else if(leftImage.src === a[1].src && rightImage.src === b[2].src){
-            left.classList.add('win')
-            right.classList.add('loose')
-            counter++;
-            counter1.textContent = counter;
-    
-        }else if(leftImage.src === a[2].src && rightImage.src === b[1].src){
-            left.classList.add('win')
-            right.classList.add('loose')
-            counter++;
-            counter1.textContent = counter;
-    
-        }else if(leftImage.src === a[2].src && rightImage.src === b[2].src){
-            left.classList.add('loose')
-            right.classList.add('win')
-            counterr++;
-            counter2.textContent = counterr;
-        }
-        checkWinner();
+        findWinner();
 
     }, 1500);
 });
+
+function findWinner(){
+
+    document.getElementById("leftImg").style.display="block";
+    document.getElementById("rightImg").style.display="block";
+    let a = document.querySelectorAll(".leftChoice");
+    let b = document.querySelectorAll(".rightChoice");
+
+    if(leftImage.src === a[0].src && rightImage.src === b[2].src){
+        left.classList.add('draw');
+        right.classList.add('draw');
+
+    }else if(leftImage.src === a[1].src && rightImage.src === b[1].src){
+        left.classList.add('draw')
+        right.classList.add('draw')
+
+    }else if(leftImage.src === a[2].src && rightImage.src === b[0].src){
+        left.classList.add('draw');
+        right.classList.add('draw')
+
+    }else if(leftImage.src === a[0].src && rightImage.src === b[0].src){
+        left.classList.add('win')
+        right.classList.add('loose')
+        counter++;
+        counter1.textContent = counter;
+        
+    }else if(leftImage.src === a[0].src && rightImage.src === b[1].src){
+        left.classList.add('loose')
+        right.classList.add('win')
+        counterr++;
+        counter2.textContent = counterr;
+
+    }else if(leftImage.src === a[1].src && rightImage.src === b[0].src){
+        left.classList.add('loose')
+        right.classList.add('win')
+        counterr++;
+        counter2.textContent = counterr;
+
+    }else if(leftImage.src === a[1].src && rightImage.src === b[2].src){
+        left.classList.add('win')
+        right.classList.add('loose')
+        counter++;
+        counter1.textContent = counter;
+
+    }else if(leftImage.src === a[2].src && rightImage.src === b[1].src){
+        left.classList.add('win')
+        right.classList.add('loose')
+        counter++;
+        counter1.textContent = counter;
+
+    }else if(leftImage.src === a[2].src && rightImage.src === b[2].src){
+        left.classList.add('loose')
+        right.classList.add('win')
+        counterr++;
+        counter2.textContent = counterr;
+    }
+    checkWinner();
+}
 
 function checkWinner(){
     if(counter === 3){
